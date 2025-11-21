@@ -1,0 +1,21 @@
+{
+  "name": "Narrative Front",
+  "short_name": "Narrative Front",
+  "description": "Cognitive warfare training simulation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a1628",
+  "theme_color": "#003366",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/narrativeFront.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "games"],
+  "lang": "en",
+  "dir": "ltr"
+}

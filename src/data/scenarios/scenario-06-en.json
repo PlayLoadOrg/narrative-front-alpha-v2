@@ -1,0 +1,56 @@
+{
+  "id": "6",
+  "round": 6,
+  
+  "inject": "Breaking: Adversary media claims a NATO vehicle struck a civilian car. Graphic (but fabricated) photos are circulating rapidly.",
+  
+  "intelligence": {
+    "hoursActive": 0.75,
+    "botAmplification": 82,
+    "damagePotential": 10,
+    "veracity": "False",
+    "emotionalResonance": 10
+  },
+  
+  "filter": {
+    "intro": "Final test. Maximum threat. Less than one hour active, massive bot push, graphic images. Adversary going for knockout blow. Speed is everything now.",
+    "outro": "This is why we train. Fact-checking works IF you move fast - dashcam footage, GPS logs, timestamps destroy the lie. Pre-bunking saves you here - if audiences already skeptical of fake accident claims, they wait for verification. Counter-narrative risky - seems like changing subject when 'people died.' Discrediting also risky - looks defensive when emotions high. Ignoring? Catastrophic. Photos 'prove' guilt, silence confirms it."
+  },
+  
+  "probabilities": {
+    "FACT_CHECK": {
+      "success": 0.55,
+      "neutral": 0.20,
+      "failure": 0.25,
+      "thorough_bonus": 0.25
+    },
+    "PRE_BUNK": {
+      "success": 0.95,
+      "neutral": 0.05,
+      "failure": 0.00,
+      "future_bonus": false
+    },
+    "IGNORE": {
+      "success": 0.00,
+      "neutral": 0.00,
+      "failure": 1.00
+    },
+    "COUNTER_NARRATIVE": {
+      "success": 0.30,
+      "neutral": 0.30,
+      "failure": 0.40
+    },
+    "DISCREDIT_SOURCE": {
+      "success": 0.25,
+      "neutral": 0.25,
+      "failure": 0.50
+    }
+  },
+  
+  "metadata": {
+    "difficulty": 10,
+    "theme": "civilian_harm",
+    "tags": ["critical", "graphic", "time_sensitive", "final_scenario"],
+    "teachingPoint": "Crisis response requires speed, evidence, and prior audience preparation"
+  }
+}

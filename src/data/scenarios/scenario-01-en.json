@@ -1,0 +1,56 @@
+{
+  "id": "1",
+  "round": 1,
+  
+  "inject": "A rumor spreads on social media: 'NATO troops are hoarding fuel from local gas stations, causing shortages for civilians.'",
+  
+  "intelligence": {
+    "hoursActive": 2.5,
+    "botAmplification": 35,
+    "damagePotential": 6,
+    "veracity": "False",
+    "emotionalResonance": 7
+  },
+  
+  "filter": {
+    "intro": "Low-level rumor. Classic scarcity narrative. Watch for amplification, yes?",
+    "outro": "Fact-checking works here because claim is simple, disprovable. Pre-bunking would have been stronger - warn about scarcity narratives before they appear. Counter-narrative also good - show NATO community support. Discrediting source is risky - makes us look defensive. Ignoring? That almost never works with scarcity claims."
+  },
+  
+  "probabilities": {
+    "FACT_CHECK": {
+      "success": 0.30,
+      "neutral": 0.10,
+      "failure": 0.60,
+      "thorough_bonus": 0.15
+    },
+    "PRE_BUNK": {
+      "success": 1.00,
+      "neutral": 0.00,
+      "failure": 0.00,
+      "future_bonus": true
+    },
+    "IGNORE": {
+      "success": 0.05,
+      "neutral": 0.05,
+      "failure": 0.90
+    },
+    "COUNTER_NARRATIVE": {
+      "success": 0.50,
+      "neutral": 0.30,
+      "failure": 0.20
+    },
+    "DISCREDIT_SOURCE": {
+      "success": 0.30,
+      "neutral": 0.20,
+      "failure": 0.50
+    }
+  },
+  
+  "metadata": {
+    "difficulty": 2,
+    "theme": "resource_scarcity",
+    "tags": ["rumor", "logistics", "grassroots"],
+    "teachingPoint": "Early intervention on simple false claims prevents escalation"
+  }
+}

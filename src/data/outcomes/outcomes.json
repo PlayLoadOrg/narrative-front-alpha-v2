@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "version": "1.0.0",
+    "description": "Generic outcome text templates by response type and result",
+    "lastUpdated": "2025-01-17"
+  },
+
+  "FACT_CHECK": {
+    "SUCCESS": [
+      {
+        "shift": 1,
+        "text": "Your rapid and clear fact-check was picked up by credible media, effectively neutralizing the claim for a majority of the public."
+      },
+      {
+        "shift": 1,
+        "text": "Technical analysis exposed the false claim. Major outlets reported your debunking, significantly limiting the narrative's spread."
+      },
+      {
+        "shift": 2,
+        "text": "Your comprehensive fact-check with verifiable evidence went viral positively, overwhelming the adversary's narrative."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "The fact-check circulated among journalists and experts but failed to penetrate the social media bubbles where the lie was spreading."
+      },
+      {
+        "shift": 0,
+        "text": "Your correction reached informed audiences but didn't break through to those already convinced by the narrative."
+      },
+      {
+        "shift": 0,
+        "text": "While technically accurate, your fact-check lacked the emotional resonance needed to counter the adversary's compelling story."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -1,
+        "text": "Your response was too slow or too technical. The adversary spun your correction as 'official propaganda,' further muddying the waters."
+      },
+      {
+        "shift": -1,
+        "text": "By the time your fact-check appeared, the narrative had solidified. Your denial was treated as confirmation by suspicious audiences."
+      },
+      {
+        "shift": -2,
+        "text": "Your fact-check was too aggressive and defensive in tone, making you appear threatened. The Streisand effect amplified the original claim."
+      }
+    ]
+  },
+
+  "PRE_BUNK": {
+    "SUCCESS": [
+      {
+        "shift": 3,
+        "text": "Your prior warnings about these specific manipulation tactics paid off. The adversary's attempt was widely recognized as hostile propaganda and dismissed, significantly boosting public resilience."
+      },
+      {
+        "shift": 3,
+        "text": "Because you pre-bunked this type of narrative, audiences were psychologically inoculated. The claim failed to gain traction and was mocked as predictable propaganda."
+      },
+      {
+        "shift": 2,
+        "text": "Your pre-emptive education created skepticism among key audiences. While the narrative spread in fringe circles, mainstream rejection was swift."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "Your pre-bunking had some effect among attentive audiences, but the adversary's narrative still found purchase in less-informed communities."
+      },
+      {
+        "shift": 0,
+        "text": "The pre-bunk helped somewhat, but the emotional power of the adversary's claim overcame rational preparation for many people."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -1,
+        "text": "Despite your warnings, the hostile narrative was compelling enough to take root. Your pre-bunking had minimal effect, and valuable resources were expended."
+      },
+      {
+        "shift": -1,
+        "text": "Your pre-bunking was too vague or poorly targeted. When the actual narrative hit, audiences didn't make the connection."
+      }
+    ]
+  },
+
+  "IGNORE": {
+    "SUCCESS": [
+      {
+        "shift": 1,
+        "text": "A risky gamble that paid off. The claim was too absurd to gain traction on its own and quickly faded into obscurity without your intervention."
+      },
+      {
+        "shift": 1,
+        "text": "By not engaging, you avoided amplifying a fringe narrative. It burned out naturally among small circles."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "The hostile narrative didn't explode, but it continues to simmer in fringe communities, creating a low level of background noise and doubt."
+      },
+      {
+        "shift": 0,
+        "text": "Your silence neither helped nor harmed significantly. The narrative exists but hasn't reached critical mass."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -3,
+        "text": "Your silence was interpreted as guilt. The narrative went viral, treated as confirmed truth by adversaries, and caused significant damage to public trust."
+      },
+      {
+        "shift": -2,
+        "text": "Ignoring allowed the rumor to spread unchecked. Public doubt increased as no authoritative voice countered the claims."
+      },
+      {
+        "shift": -2,
+        "text": "Without your response, adversary media amplified the narrative as 'the story NATO doesn't want you to know.' Silence became complicity."
+      }
+    ]
+  },
+
+  "COUNTER_NARRATIVE": {
+    "SUCCESS": [
+      {
+        "shift": 2,
+        "text": "Your powerful, positive stories completely shifted the media focus. The adversary's narrative was drowned out by a wave of compelling, authentic content."
+      },
+      {
+        "shift": 2,
+        "text": "Your counter-narrative with genuine human stories and verifiable positive impact went viral, overwhelming the adversary's messaging."
+      },
+      {
+        "shift": 1,
+        "text": "The positive narrative gained significant traction, providing audiences an alternative story to believe in."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "Your positive messaging was well-received but didn't directly address the hostile claim, which continued to circulate and cause damage in specific circles."
+      },
+      {
+        "shift": 0,
+        "text": "The counter-narrative competed with the adversary's story but neither dominated. Public opinion remained divided."
+      },
+      {
+        "shift": 0,
+        "text": "While your positive stories resonated with supporters, they didn't reach the audiences most affected by the adversary's claims."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -1,
+        "text": "Your counter-narrative was perceived as a clumsy attempt to 'change the subject' and was called out by critics, making you appear evasive."
+      },
+      {
+        "shift": -1,
+        "text": "The timing and tone of your positive messaging felt tone-deaf given the serious allegations. It backfired by seeming dismissive of legitimate concerns."
+      },
+      {
+        "shift": -2,
+        "text": "Your counter-narrative was too obviously crafted and inauthentic. Audiences saw through it, damaging credibility further."
+      }
+    ]
+  },
+
+  "DISCREDIT_SOURCE": {
+    "SUCCESS": [
+      {
+        "shift": 1,
+        "text": "You successfully exposed the source as a known disinformation agent with clear ties to hostile actors. The claim was discredited among informed audiences."
+      },
+      {
+        "shift": 1,
+        "text": "Your investigation revealed the source's funding and affiliations. Independent media picked up your exposé, undermining the narrative's credibility."
+      },
+      {
+        "shift": 2,
+        "text": "Comprehensive evidence of the source's malicious intent and fabrication history went viral, completely destroying their credibility."
+      }
+    ],
+    "NEUTRAL": [
+      {
+        "shift": 0,
+        "text": "While you proved the source was unreliable, the message had already detached from the messenger and was spreading organically among those who wanted to believe it."
+      },
+      {
+        "shift": 0,
+        "text": "Your attack on the source had mixed results. Skeptics appreciated the evidence, but true believers dismissed it as an ad hominem attack."
+      }
+    ],
+    "FAILURE": [
+      {
+        "shift": -2,
+        "text": "Your attack on the source backfired spectacularly. It was framed as an attempt to silence dissent, creating a martyr and making you look defensive and aggressive. The situation is now significantly worse."
+      },
+      {
+        "shift": -2,
+        "text": "Attacking the messenger was seen as avoiding the message. Critics accused you of deflection, and the narrative gained legitimacy through your perceived fear."
+      },
+      {
+        "shift": -1,
+        "text": "Your discrediting attempt was too aggressive. It played into the 'powerful NATO silencing critics' narrative the adversary wanted."
+      }
+    ]
+  },
+
+  "COMBINED": {
+    "SYNERGY_PREBUNK_FACTCHECK": {
+      "shift": 1,
+      "bonus": "Pre-bunking prepared audiences to trust your fact-check. The combination was highly effective."
+    },
+    "SYNERGY_COUNTER_FACTCHECK": {
+      "shift": 1,
+      "bonus": "Debunking the lie while providing a positive alternative created a powerful one-two punch."
+    },
+    "SYNERGY_FACTCHECK_DISCREDIT": {
+      "shift": 0,
+      "bonus": "Attacking both the message and the messenger felt thorough but perhaps overly aggressive to some audiences."
+    },
+    "INEFFICIENCY_MULTIPLE_FACTCHECKS": {
+      "shift": -1,
+      "penalty": "Using multiple fact-checking efforts on the same narrative was redundant and wasted resources."
+    },
+    "INEFFICIENCY_IGNORE_THEN_RESPOND": {
+      "shift": -1,
+      "penalty": "Inconsistent strategy. Ignoring then responding appeared indecisive and reactive."
+    }
+  },
+
+  "CRITICAL_OUTCOMES": {
+    "CRITICAL_SUCCESS": {
+      "shift": 3,
+      "text": "CRITICAL SUCCESS: Your response was perfectly timed and executed. The adversary's operation completely collapsed, and public trust actually increased."
+    },
+    "CRITICAL_FAILURE": {
+      "shift": -3,
+      "text": "CRITICAL FAILURE: Your response catastrophically backfired. The adversary used your actions as proof of their narrative, causing massive damage."
+    }
+  }
+}

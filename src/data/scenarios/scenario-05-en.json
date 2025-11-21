@@ -1,0 +1,56 @@
+{
+  "id": "5",
+  "round": 5,
+  
+  "inject": "A conspiracy theory goes viral, claiming NATO is secretly installing surveillance equipment in civilian infrastructure under the guise of the exercise.",
+  
+  "intelligence": {
+    "hoursActive": 8.0,
+    "botAmplification": 28,
+    "damagePotential": 7,
+    "veracity": "False",
+    "emotionalResonance": 7
+  },
+  
+  "filter": {
+    "intro": "Conspiracy narrative. Low bot amplification but long time active - organic spread. True believers driving this, not bots. Difficult.",
+    "outro": "Conspiracy theories resist fact-checking - believers dismiss evidence as 'what they want you to think.' Counter-narrative works better - transparency, open facilities, invite inspection. Pre-bunking excellent if you inoculated against surveillance paranoia. Discrediting conspiracy theorists? Almost always backfires - creates martyrs. Ignoring is very dangerous - lets theory metastasize."
+  },
+  
+  "probabilities": {
+    "FACT_CHECK": {
+      "success": 0.25,
+      "neutral": 0.35,
+      "failure": 0.40,
+      "thorough_bonus": 0.10
+    },
+    "PRE_BUNK": {
+      "success": 0.85,
+      "neutral": 0.10,
+      "failure": 0.05,
+      "future_bonus": true
+    },
+    "IGNORE": {
+      "success": 0.00,
+      "neutral": 0.10,
+      "failure": 0.90
+    },
+    "COUNTER_NARRATIVE": {
+      "success": 0.55,
+      "neutral": 0.30,
+      "failure": 0.15
+    },
+    "DISCREDIT_SOURCE": {
+      "success": 0.05,
+      "neutral": 0.15,
+      "failure": 0.80
+    }
+  },
+  
+  "metadata": {
+    "difficulty": 7,
+    "theme": "conspiracy",
+    "tags": ["surveillance", "paranoia", "organic_spread"],
+    "teachingPoint": "Conspiracies require transparency and engagement, not aggressive debunking"
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "id": "4",
+  "round": 4,
+  
+  "inject": "A social media campaign using fabricated photos claims NATO exercises are causing widespread, irreversible environmental damage.",
+  
+  "intelligence": {
+    "hoursActive": 6.0,
+    "botAmplification": 52,
+    "damagePotential": 6,
+    "veracity": "Misleading",
+    "emotionalResonance": 8
+  },
+  
+  "filter": {
+    "intro": "Environmental angle. Emotional, visual. Notice 'Misleading' not 'False' - there IS environmental footprint, but scale is exaggerated, yes?",
+    "outro": "Fact-checking works because photos are fake - visual analysis exposes manipulation. Counter-narrative very strong - show actual environmental protocols, invite inspections. Pre-bunking helps if you prepared audiences for eco-manipulation tactics. Discrediting feels callous here - looks like you don't care about environment. Ignoring lets it grow among climate-conscious demographics."
+  },
+  
+  "probabilities": {
+    "FACT_CHECK": {
+      "success": 0.50,
+      "neutral": 0.25,
+      "failure": 0.25,
+      "thorough_bonus": 0.20
+    },
+    "PRE_BUNK": {
+      "success": 0.75,
+      "neutral": 0.15,
+      "failure": 0.10,
+      "future_bonus": true
+    },
+    "IGNORE": {
+      "success": 0.05,
+      "neutral": 0.15,
+      "failure": 0.80
+    },
+    "COUNTER_NARRATIVE": {
+      "success": 0.70,
+      "neutral": 0.20,
+      "failure": 0.10
+    },
+    "DISCREDIT_SOURCE": {
+      "success": 0.15,
+      "neutral": 0.25,
+      "failure": 0.60
+    }
+  },
+  
+  "metadata": {
+    "difficulty": 6,
+    "theme": "environmental_damage",
+    "tags": ["fake_photo", "emotional", "visual"],
+    "teachingPoint": "Environmental claims require transparency and proactive positive messaging"
+  }
+}

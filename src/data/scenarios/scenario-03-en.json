@@ -1,0 +1,56 @@
+{
+  "id": "3",
+  "round": 3,
+  
+  "inject": "An adversary-aligned outlet publishes a 'leaked memo' claiming several NATO allies are privately reconsidering their participation due to costs.",
+  
+  "intelligence": {
+    "hoursActive": 4.0,
+    "botAmplification": 45,
+    "damagePotential": 7,
+    "veracity": "False",
+    "emotionalResonance": 6
+  },
+  
+  "filter": {
+    "intro": "Division narrative. Adversary trying to create doubt within alliance. This is strategic, not tactical.",
+    "outro": "Counter-narrative strongest here - show allied unity with joint statements. Fact-checking the fake memo works but feels reactive. Pre-bunking helps if you warned about division tactics. Discrediting outlet is moderate risk - some audiences already distrust them. Ignoring lets suspicion fester."
+  },
+  
+  "probabilities": {
+    "FACT_CHECK": {
+      "success": 0.40,
+      "neutral": 0.30,
+      "failure": 0.30,
+      "thorough_bonus": 0.15
+    },
+    "PRE_BUNK": {
+      "success": 0.70,
+      "neutral": 0.20,
+      "failure": 0.10,
+      "future_bonus": true
+    },
+    "IGNORE": {
+      "success": 0.05,
+      "neutral": 0.25,
+      "failure": 0.70
+    },
+    "COUNTER_NARRATIVE": {
+      "success": 0.65,
+      "neutral": 0.25,
+      "failure": 0.10
+    },
+    "DISCREDIT_SOURCE": {
+      "success": 0.40,
+      "neutral": 0.35,
+      "failure": 0.25
+    }
+  },
+  
+  "metadata": {
+    "difficulty": 5,
+    "theme": "alliance_fracture",
+    "tags": ["fake_document", "political", "strategic"],
+    "teachingPoint": "Unity narratives counter division tactics more effectively than debunking alone"
+  }
+}
