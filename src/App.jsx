@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { SCREENS, DEFAULT_LANGUAGE } from './constants';
+import { SCREENS, DEFAULT_LANGUAGE, GAME_MODES } from './constants';
 import { useGameState } from './hooks/useGameState';
 import { useAudio } from './hooks/useAudio';
 import { useTranslation } from './hooks/useTranslation';
@@ -7,6 +7,7 @@ import { StartScreen } from './screens/StartScreen';
 import { BriefingScreen } from './screens/BriefingScreen';
 import { GameScreen } from './screens/GameScreen';
 import { EndScreen } from './screens/EndScreen';
+import { ModeSelectionScreen } from './screens/ModeSelectionScreen';
 import './App.css';
 
 /**
@@ -20,6 +21,10 @@ function App() {
   // Settings State
   const [isMuted, setIsMuted] = useState(false);
   const [language, setLanguage] = useState(DEFAULT_LANGUAGE);
+  
+  // Game Mode State
+  const [gameMode, setGameMode] = useState(GAME_MODES.SCENARIO);
+  const [scenarioId, setScenarioId] = useState('nato-eastern-europe');
   
   // Translation Hook
   const { t, loading: translationsLoading } = useTranslation();
@@ -67,7 +72,18 @@ function App() {
   };
 
   const handleBriefingToGame = () => {
+    // For now, go directly to game with default scenario
+    // In Output 5, this will go to MODE_SELECTION screen
     gameState.resetGameState();
+    setGameMode(GAME_MODES.SCENARIO);
+    setScenarioId('nato-eastern-europe');
+    setScreen(SCREENS.MODE_SELECTION);
+  };
+
+  const handleModeSelection = (mode, scenarioId) => {
+    gameState.resetGameState();
+    setGameMode(mode);
+    setScenarioId(scenarioId);
     setScreen(SCREENS.GAME);
   };
 
@@ -155,6 +171,14 @@ function App() {
             t={t}
           />
         );
+      
+      case SCREENS.MODE_SELECTION:
+        return (
+          <ModeSelectionScreen
+            onSelectMode={handleModeSelection}
+            t={t}
+          />
+        );
 
       case SCREENS.GAME:
         return (
@@ -163,6 +187,8 @@ function App() {
             meter={gameState.meter}
             manpower={gameState.manpower}
             preBunksUsed={gameState.preBunksUsed}
+            gameMode={gameMode}
+            scenarioId={scenarioId}
             language={language}
             isMuted={isMuted}
             setIsMuted={setIsMuted}

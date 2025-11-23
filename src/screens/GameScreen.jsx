@@ -21,6 +21,8 @@ export function GameScreen({
   meter,
   manpower,
   preBunksUsed,
+  gameMode,
+  scenarioId,
   language,
   isMuted,
   setIsMuted,
@@ -36,7 +38,7 @@ export function GameScreen({
   t
 }) {
   // UI State
-  const [activeTab, setActiveTab] = useState('scenario'); // scenario | response | filter
+  const [activeTab, setActiveTab] = useState('scenario'); // scenario | comms | decision
   const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [showOutcome, setShowOutcome] = useState(false);
   
@@ -260,16 +262,16 @@ export function GameScreen({
             {t('game.tabScenario')}
           </button>
           <button
-            className={`tab-button ${activeTab === 'response' ? 'active' : ''}`}
-            onClick={() => setActiveTab('response')}
+            className={`tab-button ${activeTab === 'comms' ? 'active' : ''}`}
+            onClick={() => setActiveTab('comms')}
           >
-            {t('game.tabResponse')}
+            {t('game.tabComms')}
           </button>
           <button
-            className={`tab-button ${activeTab === 'filter' ? 'active' : ''}`}
-            onClick={() => setActiveTab('filter')}
+            className={`tab-button ${activeTab === 'decision' ? 'active' : ''}`}
+            onClick={() => setActiveTab('decision')}
           >
-            {t('game.tabFilter')}
+            {t('game.tabDecision')}
           </button>
         </div>
 
@@ -295,10 +297,18 @@ export function GameScreen({
             </div>
           )}
 
-          {/* Response Tab */}
-          {activeTab === 'response' && (
-            <div className="response-tab">
-              <h3 className="response-tab-title">{t('game.yourResponse')}</h3>
+          {/* Comms Tab - Filter's Guidance */}
+          {activeTab === 'comms' && (
+            <div className="comms-tab">
+              <h3 className="comms-tab-title">{t('game.commsTitle')}</h3>
+              <FilterChat messages={filterMessages} t={t} />
+            </div>
+          )}
+
+          {/* Decision Tab - Your Response Selection */}
+          {activeTab === 'decision' && (
+            <div className="decision-tab">
+              <h3 className="decision-tab-title">{t('game.decisionTitle')}</h3>
               
               {/* Manpower Summary */}
               <div className="manpower-summary">
@@ -329,14 +339,6 @@ export function GameScreen({
               {!canConfirm() && (
                 <p className="error-text">{t('responses.insufficientManpower')}</p>
               )}
-            </div>
-          )}
-
-          {/* Filter Tab */}
-          {activeTab === 'filter' && (
-            <div className="filter-tab">
-              <h3 className="filter-tab-title">{t('game.filterChatTitle')}</h3>
-              <FilterChat messages={filterMessages} t={t} />
             </div>
           )}
         </div>

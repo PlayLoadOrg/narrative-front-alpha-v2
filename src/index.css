@@ -7,7 +7,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; /* FIXED: Always use border-box */
 }
 
 html {
@@ -15,6 +15,7 @@ html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  box-sizing: border-box; /* ADDED */
 }
 
 body {
@@ -25,11 +26,13 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  box-sizing: border-box; /* ADDED */
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+  box-sizing: border-box; /* ADDED */
 }
 
 /* Remove default button styles */
@@ -37,6 +40,7 @@ button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  box-sizing: border-box; /* ADDED */
 }
 
 /* Remove default list styles */
@@ -73,9 +77,5 @@ legend {
   padding: 0;
 }
 
-/* Ensure consistent box-sizing */
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+/* REMOVED THE PROBLEMATIC INHERIT BLOCK */
+/* All elements now use border-box directly from line 8 */

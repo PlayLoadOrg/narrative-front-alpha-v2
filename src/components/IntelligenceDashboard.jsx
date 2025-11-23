@@ -3,8 +3,9 @@ import { Clock, TrendingUp, Eye, Activity, AlertCircle } from 'lucide-react';
 import { VERACITY_LEVELS } from '../constants';
 
 /**
- * Intelligence Dashboard
- * Displays 5 key metrics for scenario analysis
+ * Compact Intelligence Dashboard (Original's superior design)
+ * Single card with all metrics - much more space efficient
+ * Metrics ordered: Time, Veracity, then 3 bars grouped together
  */
 export function IntelligenceDashboard({ intelligence, t }) {
   const getVeracityColor = (veracity) => {
@@ -36,17 +37,17 @@ export function IntelligenceDashboard({ intelligence, t }) {
 
     if (totalThreat >= 7) {
       return {
-        label: t('intelligence.threatLevelCritical'),
+        label: '🔴 CRITICAL THREAT',
         color: '#ef4444'
       };
     } else if (totalThreat >= 4) {
       return {
-        label: t('intelligence.threatLevelHigh'),
+        label: '🟡 HIGH THREAT',
         color: '#facc15'
       };
     } else {
       return {
-        label: t('intelligence.threatLevelModerate'),
+        label: '🟢 MODERATE THREAT',
         color: '#4ade80'
       };
     }
@@ -54,92 +55,86 @@ export function IntelligenceDashboard({ intelligence, t }) {
 
   const threat = getThreatLevel();
 
+  // REORDERED: Time and Veracity first (no bars), then 3 bars grouped
   const metrics = [
     {
-      icon: <Clock size={18} />,
+      icon: <Clock size={14} />,
       label: t('intelligence.hoursActiveLabel'),
       value: `${intelligence.hoursActive}${t('intelligence.hoursActiveUnit')}`,
-      description: t('intelligence.hoursActiveDesc'),
       color: intelligence.hoursActive <= 2 ? '#ef4444' : intelligence.hoursActive <= 6 ? '#facc15' : '#4ade80'
     },
     {
-      icon: <Activity size={18} />,
-      label: t('intelligence.botAmplificationLabel'),
-      value: `${intelligence.botAmplification}${t('intelligence.botAmplificationUnit')}`,
-      description: t('intelligence.botAmplificationDesc'),
-      barValue: intelligence.botAmplification,
-      barMax: 100,
-      color: getBarColor(intelligence.botAmplification, 100)
+      icon: <Eye size={14} />,
+      label: t('intelligence.veracityLabel'),
+      value: t(`intelligence.veracity${intelligence.veracity.replace(/\s/g, '')}`),
+      color: getVeracityColor(intelligence.veracity)
     },
     {
-      icon: <TrendingUp size={18} />,
+      icon: <TrendingUp size={14} />,
       label: t('intelligence.damagePotentialLabel'),
       value: `${intelligence.damagePotential}${t('intelligence.damagePotentialScale')}`,
-      description: t('intelligence.damagePotentialDesc'),
       barValue: intelligence.damagePotential,
       barMax: 10,
       color: getBarColor(intelligence.damagePotential, 10)
     },
     {
-      icon: <Eye size={18} />,
-      label: t('intelligence.veracityLabel'),
-      value: t(`intelligence.veracity${intelligence.veracity.replace(/\s/g, '')}`),
-      description: t('intelligence.veracityDesc'),
-      color: getVeracityColor(intelligence.veracity)
-    },
-    {
-      icon: <AlertCircle size={18} />,
+      icon: <AlertCircle size={14} />,
       label: t('intelligence.emotionalResonanceLabel'),
       value: `${intelligence.emotionalResonance}${t('intelligence.emotionalResonanceScale')}`,
-      description: t('intelligence.emotionalResonanceDesc'),
       barValue: intelligence.emotionalResonance,
       barMax: 10,
       color: getBarColor(intelligence.emotionalResonance, 10)
+    },
+    {
+      icon: <Activity size={14} />,
+      label: t('intelligence.botAmplificationLabel'),
+      value: `${intelligence.botAmplification}${t('intelligence.botAmplificationUnit')}`,
+      barValue: intelligence.botAmplification,
+      barMax: 100,
+      color: getBarColor(intelligence.botAmplification, 100)
     }
   ];
 
   return (
-    <div className="intelligence-dashboard">
-      <h4 className="intelligence-title">{t('intelligence.title')}</h4>
+    <div className="intel-compact">
+      <h4 className="intel-compact-title">{t('intelligence.title')}</h4>
       
       {/* Threat Level Badge */}
-      <div className="threat-badge" style={{ backgroundColor: `${threat.color}20`, borderColor: threat.color }}>
-        <span style={{ color: threat.color }}>{threat.label}</span>
+      <div className="threat-badge-compact" style={{ 
+        backgroundColor: `${threat.color}20`, 
+        borderColor: threat.color,
+        color: threat.color
+      }}>
+        {threat.label}
       </div>
 
-      {/* Metrics Grid */}
-      <div className="metrics-grid">
-        {metrics.map((metric, idx) => (
-          <div key={idx} className="metric-card">
-            <div className="metric-header">
-              <div className="metric-icon" style={{ color: metric.color }}>
-                {metric.icon}
-              </div>
-              <div className="metric-info">
-                <span className="metric-label">{metric.label}</span>
-                <span className="metric-value" style={{ color: metric.color }}>
-                  {metric.value}
-                </span>
-              </div>
-            </div>
-            
-            {/* Optional bar for quantitative metrics */}
-            {metric.barValue !== undefined && (
-              <div className="metric-bar">
-                <div 
-                  className="metric-bar-fill"
-                  style={{
-                    width: `${(metric.barValue / metric.barMax) * 100}%`,
-                    backgroundColor: metric.color
-                  }}
-                />
-              </div>
-            )}
-            
-            <p className="metric-description">{metric.description}</p>
+      {/* All Metrics in Compact Layout */}
+      {metrics.map((metric, idx) => (
+        <div key={idx} className="intel-metric-compact">
+          <div className="metric-header-compact">
+            <span className="metric-icon-compact" style={{ color: metric.color }}>
+              {metric.icon}
+            </span>
+            <span className="metric-label-compact">{metric.label}:</span>
+            <span className="metric-value-compact" style={{ color: metric.color }}>
+              {metric.value}
+            </span>
           </div>
-        ))}
-      </div>
+          
+          {/* Optional bar for quantitative metrics */}
+          {metric.barValue !== undefined && (
+            <div className="metric-bar-compact">
+              <div 
+                className="metric-bar-fill-compact"
+                style={{
+                  width: `${(metric.barValue / metric.barMax) * 100}%`,
+                  backgroundColor: metric.color
+                }}
+              />
+            </div>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

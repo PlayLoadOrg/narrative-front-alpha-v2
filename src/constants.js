@@ -132,9 +132,36 @@ export const DEFAULT_LANGUAGE = LANGUAGES.EN;
 export const SCREENS = {
   START: 'start',
   BRIEFING: 'briefing',
+  MODE_SELECTION: 'mode_selection', // ADDED
   GAME: 'game',
   OUTCOME: 'outcome',
   END: 'end'
+};
+
+// ============================================================================
+// GAME MODES
+// ============================================================================
+
+export const GAME_MODES = {
+  SCENARIO: 'scenario',
+  PROCEDURAL: 'procedural'
+};
+
+export const MODE_CONFIG = {
+  [GAME_MODES.SCENARIO]: {
+    name: 'Scenario Mode',
+    description: 'Hand-crafted learning scenarios with Filter guidance',
+    hasFilter: true,
+    hasDecBuilding: false,
+    fixedResponses: true
+  },
+  [GAME_MODES.PROCEDURAL]: {
+    name: 'Procedural Mode',
+    description: 'Endless generated scenarios with deck-building',
+    hasFilter: false,
+    hasDeckBuilding: true,
+    fixedResponses: false
+  }
 };
 
 // ============================================================================

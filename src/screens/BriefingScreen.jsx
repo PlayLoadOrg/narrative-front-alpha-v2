@@ -23,7 +23,7 @@ export function BriefingScreen({ onStart, t }) {
         <div className="briefing-quote">
           <Typewriter 
             text={t('briefing.quote')}
-            speed={30}
+            speed={60}
             onComplete={() => setQuoteComplete(true)}
           />
         </div>
@@ -38,7 +38,7 @@ export function BriefingScreen({ onStart, t }) {
           <div className="briefing-text">
             <Typewriter 
               text={t('briefing.text')}
-              speed={15}
+              speed={10}
               onComplete={() => setTextComplete(true)}
             />
           </div>

@@ -1,0 +1,40 @@
+{
+  "version": "1.0.0",
+  "scenarios": [
+    {
+      "id": "nato-eastern-europe",
+      "name": "NATO Eastern Europe Peacekeeping",
+      "classification": "UNCLASSIFIED",
+      "mode": "scenario",
+      "rounds": 6,
+      "description": "Hand-crafted scenarios based on realistic disinformation tactics in peacekeeping operations. Includes tactical advisor guidance and learning-focused probability tables.",
+      "features": [
+        "filter_guidance",
+        "fixed_responses",
+        "learning_focused",
+        "probability_tuned"
+      ],
+      "difficulty": "intermediate",
+      "estimatedTime": "15-20 minutes",
+      "enabled": true
+    },
+    {
+      "id": "procedural-infinite",
+      "name": "Infinite Mode (Coming Soon)",
+      "classification": "UNCLASSIFIED",
+      "mode": "procedural",
+      "rounds": 999,
+      "description": "Endless procedurally generated scenarios with deck-building mechanics. Build your response arsenal over time and test your strategic communications skills against infinite variations.",
+      "features": [
+        "deck_building",
+        "procedural_generation",
+        "replayability",
+        "progressive_unlocks"
+      ],
+      "difficulty": "advanced",
+      "estimatedTime": "Endless",
+      "enabled": false
+    }
+  ],
+  "defaultScenario": "nato-eastern-europe"
+}
